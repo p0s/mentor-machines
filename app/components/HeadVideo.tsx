@@ -20,6 +20,8 @@ export default function HeadVideo() {
 
   const [material, setMaterial] = useState<string>("");
 
+  const [quiz, setQuiz] = useState<boolean>(false);
+
   async function getLearningMaterials() {
     const res = await postDataGetJSON("/api/topic", {
       topic: "zkEVM",
@@ -29,9 +31,9 @@ export default function HeadVideo() {
     setMaterial(res.text);
   }
 
-  async function getVideo() {
+  async function getVideo(line: string, callback?: any) {
     const res = await postData("/api/face", {
-      question: `Okay, Let's talk about ${topic}. I'll give you a brief introduction.`,
+      question: line,
     }); // Needless since already awaited above
 
     if (res.body instanceof ReadableStream) {
@@ -42,7 +44,9 @@ export default function HeadVideo() {
       setTimeout(() => {
         setPlaying(true);
       }, 0);
-      getLearningMaterials();
+      if (callback) {
+        callback();
+      }
     } else {
       // Suggest showing a friendly error to the user. This would "quietly" fail.
       console.log("video url unknown");
@@ -56,7 +60,37 @@ export default function HeadVideo() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    getVideo();
+    getVideo(
+      `Okay, Let's talk about ${topic}. I'll give you a brief introduction.`,
+      getLearningMaterials
+    );
+  };
+
+  const handleStartQuiz = () => {
+    getVideo(
+      `Okay, Let's do a little quiz about ${topic}. Try your best!`,
+      () => setQuiz(true)
+    );
+  };
+
+  const encourage = (response: any) => {
+    const { isCorrect } = response;
+    getVideo(
+      isCorrect
+        ? `Good job! You're doing great. Keep it up!`
+        : `Dont give up! You can do it!`
+    );
+  };
+
+  const congradulations = () => {
+    getVideo(
+      `Congratulations! You've finished the quiz. You can learn more about ${topic} by clicking the links below.`
+    );
+  };
+
+  const reset = () => {
+    setQuiz(false);
+    setMaterial("");
   };
 
   return (
@@ -78,48 +112,69 @@ export default function HeadVideo() {
           )}
           <ReactPlayer
             className={styles["react-player"]}
-            playing={true}
+            playing
+            muted
             loop
             playsinline
-            url={
-              "https://ugc-idle.s3-us-west-2.amazonaws.com/415417c29c16d10016b9042a44cd3e09.mp4"
-            }
+            url={"/videos/vitalik.mp4"}
             width="100%"
             height="100%"
           />
         </div>
-        <div>
-          <div className="form-control w-full max-w-xs">
-            <label className="label">
-              <span className="label-text">Pick a topice to learn about.</span>
-            </label>
-            <select
-              value={topic}
-              onChange={handleSelect}
-              className="select select-bordered"
-            >
-              <option value="Ethereum">Ethereum</option>
-              <option value="zkEVM">zkEVM</option>
-              <option value="Layer2">Layer2</option>
-            </select>
+        {!quiz && (
+          <>
+            <div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">
+                    Pick a topice to learn about.
+                  </span>
+                </label>
+                <select
+                  value={topic}
+                  onChange={handleSelect}
+                  className="select select-bordered"
+                >
+                  <option value="Ethereum">Ethereum</option>
+                  <option value="zkEVM">zkEVM</option>
+                  <option value="Layer2">Layer2</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <input
+                className="input input-bordered w-full max-w-xs"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+              />
+            </div>
+            <div>
+              <button className="btn btn-block" onClick={handleSubmit}>
+                Submit
+              </button>
+            </div>
+          </>
+        )}
+        {!quiz && (
+          <div>
+            <ReactMarkdown>{material}</ReactMarkdown>
           </div>
-        </div>
-        <div>
-          <input
-            className="input input-bordered w-full max-w-xs"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-          />
-        </div>
-        <div>
-          <button className="btn btn-block" onClick={handleSubmit}>
-            Submit
-          </button>
-        </div>
-        <div>
-          <ReactMarkdown>{material}</ReactMarkdown>
-        </div>
-        <div>{material && <QuizTest />}</div>
+        )}
+        {material && (
+          <div>
+            {quiz ? (
+              <QuizTest
+                onQuestionSubmit={encourage}
+                onComplete={congradulations}
+                reset={reset}
+              />
+            ) : (
+              <button className="btn btn-block" onClick={handleStartQuiz}>
+                Quiz
+              </button>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
