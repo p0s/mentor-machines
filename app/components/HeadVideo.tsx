@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "./HeadVideo.module.scss";
+import QuizTest from "./QuizTest";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
@@ -118,6 +119,7 @@ export default function HeadVideo() {
         <div>
           <ReactMarkdown>{material}</ReactMarkdown>
         </div>
+        <div>{material && <QuizTest />}</div>
       </div>
     </div>
   );

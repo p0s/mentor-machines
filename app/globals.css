@@ -6,5 +6,10 @@ root,
 html,
 body {
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.react-quiz-container {
+  margin: 0;
+  width: 100%;
 }

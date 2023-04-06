@@ -12,7 +12,7 @@ export const makeBasicQAChain = () => {
     {
       modelName: "gpt-3.5-turbo",
       temperature: 0.5,
-      cache: false,
+      cache: true,
       concurrency: 5,
       //   verbose: true,
       streaming: false,
