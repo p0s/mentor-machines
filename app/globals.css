@@ -10,6 +10,6 @@ body {
 }
 
 .react-quiz-container {
-  margin: 0;
+  margin: 0 0 4rem 0;
   width: 100%;
 }
