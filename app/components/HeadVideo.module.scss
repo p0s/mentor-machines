@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-video {
+  pointer-events: none;
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem auto;
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .front {
+    z-index: 99;
+  }
+  .hidden {
+    opacity: 0;
+  }
+}
