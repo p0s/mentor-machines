@@ -1,5 +1,6 @@
 "use client";
 import { postData, postDataGetJSON } from "@/utils/fetchHelper";
+import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
@@ -21,6 +22,8 @@ export default function HeadVideo() {
   const [material, setMaterial] = useState<string>("");
 
   const [quiz, setQuiz] = useState<boolean>(false);
+
+  const [accessibility, setAccessibility] = useState<boolean>(false);
 
   async function getLearningMaterials() {
     const res = await postDataGetJSON("/api/topic", {
@@ -88,6 +91,12 @@ export default function HeadVideo() {
     );
   };
 
+  const screenReader = (instruction: string) => {
+    if (accessibility) {
+      getVideo(instruction);
+    }
+  };
+
   const reset = () => {
     setQuiz(false);
     setMaterial("");
@@ -133,6 +142,11 @@ export default function HeadVideo() {
                 <select
                   value={topic}
                   onChange={handleSelect}
+                  onFocus={() => {
+                    screenReader(
+                      `You're focusing on a dropbown list. You can choose a topic to learn about.`
+                    );
+                  }}
                   className="select select-bordered"
                 >
                   <option value="Ethereum">Ethereum</option>
@@ -146,10 +160,23 @@ export default function HeadVideo() {
                 className="input input-bordered w-full max-w-xs"
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
+                onFocus={() => {
+                  screenReader(
+                    `You're focusing on then question input. Type something you want to learn.`
+                  );
+                }}
               />
             </div>
             <div>
-              <button className="btn btn-block" onClick={handleSubmit}>
+              <button
+                className="btn btn-block"
+                onClick={handleSubmit}
+                onFocus={() => {
+                  screenReader(
+                    `You're focusing on then submit button. Click to get the learning materials.`
+                  );
+                }}
+              >
                 Submit
               </button>
             </div>
@@ -176,6 +203,23 @@ export default function HeadVideo() {
             )}
           </div>
         )}
+        <div>
+          {accessibility ? (
+            <button
+              onClick={() => setAccessibility(false)}
+              className="btn btn-circle btn-sm"
+            >
+              <Icon icon="ion:accessibility" />
+            </button>
+          ) : (
+            <button
+              onClick={() => setAccessibility(true)}
+              className="btn btn-circle btn-sm btn-outline"
+            >
+              <Icon icon="ion:accessibility" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
