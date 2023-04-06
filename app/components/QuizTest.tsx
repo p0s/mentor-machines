@@ -1,4 +1,4 @@
-import { quiz } from "@/quiz/react";
+import { quiz } from "@/quiz/ethereum";
 import Quiz from "react-quiz-component";
 
 const renderCustomResultPage = (obj: {
