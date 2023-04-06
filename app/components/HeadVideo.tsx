@@ -41,7 +41,7 @@ export default function HeadVideo() {
       setVideoUrl(url);
       setTimeout(() => {
         videoRef.current?.play();
-      }, 1000);
+      }, 0);
     } else {
       // Suggest showing a friendly error to the user. This would "quietly" fail.
       console.log("video url unknown");
