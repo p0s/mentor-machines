@@ -1,5 +1,15 @@
-import { quiz } from "@/quiz/ethereum";
+import { quiz as ethereumQuiz } from "@/quiz/ethereum";
+import { quiz as layer2Quiz } from "@/quiz/layer2";
+import { quiz as zkevmQuiz } from "@/quiz/zkevm";
 import Quiz from "react-quiz-component";
+
+export type topicProps = "Ethereum" | "zkEVM" | "Layer2";
+
+const quizList = {
+  Ethereum: ethereumQuiz,
+  zkEVM: zkevmQuiz,
+  Layer2: layer2Quiz,
+};
 
 const renderCustomResultPage = (obj: {
   reset: () => void;
@@ -26,17 +36,19 @@ const renderCustomResultPage = (obj: {
 };
 
 export default function QuizTest({
+  topic,
   onQuestionSubmit,
   onComplete,
   reset,
 }: {
+  topic: topicProps;
   onQuestionSubmit: (response: any) => void;
   onComplete: () => void;
   reset: () => void;
 }) {
   return (
     <Quiz
-      quiz={quiz}
+      quiz={quizList[topic]}
       shuffle={true}
       showDefaultResult={false}
       customResultPage={(props: any) =>

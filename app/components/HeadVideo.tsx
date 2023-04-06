@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "./HeadVideo.module.scss";
-import QuizTest from "./QuizTest";
+import QuizTest, { topicProps } from "./QuizTest";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 export default function HeadVideo() {
-  const [topic, setTopic] = useState<string>("zkEVM");
+  const [topic, setTopic] = useState<topicProps>("zkEVM");
   const [question, setQuestion] = useState<string>(
     "I want to learn about zkEVM."
   );
@@ -54,7 +54,7 @@ export default function HeadVideo() {
   }
 
   const handleSelect = (e: { target: { value: string } }) => {
-    setTopic(e.target.value);
+    setTopic(e.target.value as topicProps);
     setQuestion(`I want to learn about ${e.target.value}.`);
   };
 
@@ -164,6 +164,7 @@ export default function HeadVideo() {
           <div>
             {quiz ? (
               <QuizTest
+                topic={topic}
                 onQuestionSubmit={encourage}
                 onComplete={congradulations}
                 reset={reset}
