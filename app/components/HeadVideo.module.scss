@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .head-video {
@@ -8,7 +9,9 @@
   position: relative;
   width: 10rem;
   height: 10rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
+  border-radius: 50%;
+  overflow: hidden;
   .react-player {
     position: absolute;
     top: 0;
