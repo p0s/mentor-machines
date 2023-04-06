@@ -2,7 +2,7 @@ export const quiz = {
   quizTitle: "zkEVM Quiz",
   quizSynopsis:
     "Answer the questions below to test your knowledge of zkEVM. You will be given 10 minutes to complete the quiz. Good luck!",
-  nrOfQuestions: "1",
+  nrOfQuestions: "3",
   questions: [
     {
       question: "ReactJS is developed by _____?",

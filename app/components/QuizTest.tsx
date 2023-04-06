@@ -8,12 +8,14 @@ const renderCustomResultPage = (obj: {
 }) => {
   //   console.log(obj);
   const { numberOfQuestions, numberOfCorrectAnswers } = obj;
+  const finalScore = (numberOfCorrectAnswers / numberOfQuestions) * 100;
   return (
     <div>
       You got {numberOfCorrectAnswers} out of {numberOfQuestions} questions!
       <br />
-      You scored{" "}
-      {((numberOfCorrectAnswers / numberOfQuestions) * 100).toFixed(0)} points!
+      You scored {finalScore.toFixed(0)} points!
+      <br />
+      {finalScore >= 90 && `You won a NFT prize!`}
     </div>
   );
 };
