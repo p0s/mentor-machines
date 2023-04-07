@@ -4,12 +4,12 @@ import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-import styles from "./HeadVideo.module.scss";
+import styles from "./App.module.scss";
 import QuizTest, { topicProps } from "./QuizTest";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
-export default function HeadVideo() {
+export default function App() {
   const [topic, setTopic] = useState<topicProps>("zkEVM");
   const [question, setQuestion] = useState<string>(
     "I want to learn about zkEVM."
