@@ -45,12 +45,6 @@ export async function POST(request: Request) {
         upsert: false,
       });
 
-    // await supabase
-    //   .storage
-    //   .from('videos')
-    //   .createSignedUrl('public/alice.mp4', 60)
-
-
     const { data } = supabase
       .storage
       .from('videos')
