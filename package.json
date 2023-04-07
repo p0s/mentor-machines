@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.15.0",
     "@thirdweb-dev/chains": "^0.1.11",
     "@thirdweb-dev/react": "^3.11.7",
     "@thirdweb-dev/sdk": "^3.10.10",
@@ -21,6 +22,7 @@
     "ethers": "5",
     "eventsource-parser": "^1.0.0",
     "next": "13.3.0",
+    "node-fetch": "^3.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.6",

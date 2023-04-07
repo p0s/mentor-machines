@@ -79,6 +79,17 @@ export default function Learn({ mentor }: { mentor: any }) {
   //   setIsLoading(false);
   // }
 
+  // async function getVideo(line: string, callback?: any) {
+  //   setIsLoading(true);
+  //   const res = await postDataGetJSON("/api/video", {
+  //     question: line,
+  //     idle_url: mentor.loopUrl,
+  //     azure_voice: mentor.azure_voice,
+  //   }); // Needless since already awaited above
+
+  //   console.log(res);
+  // }
+
   async function getVideo(line: string, callback?: any) {
     setIsLoading(true);
     const res = await postData("/api/face", {
