@@ -1,4 +1,6 @@
 "use client";
+import { ScrollAlphaTestnet } from "@thirdweb-dev/chains";
+import { ThirdwebProvider, metamaskWallet } from "@thirdweb-dev/react";
 import { useState } from "react";
 import Learn from "./Learn";
 import Mentors from "./Mentors";
@@ -9,8 +11,17 @@ export default function App() {
     setSelected(index);
   };
   return (
-    <>
-      {selected !== null ? <Learn /> : <Mentors handleSelect={handleSelect} />}
-    </>
+    <ThirdwebProvider
+      supportedWallets={[metamaskWallet()]}
+      activeChain={ScrollAlphaTestnet}
+    >
+      <>
+        {selected !== null ? (
+          <Learn />
+        ) : (
+          <Mentors handleSelect={handleSelect} />
+        )}
+      </>
+    </ThirdwebProvider>
   );
 }

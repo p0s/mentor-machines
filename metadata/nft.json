@@ -1,0 +1,16 @@
+{
+  "name": "MachineMasters",
+  "description": "Mastered the Machine Mentors",
+  "image": "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg",
+  "attributes": [
+    {
+      "trait_type": "Status",
+      "value": "Winner"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Score",
+      "value": 100
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 "use client";
 import { postData, postDataGetJSON } from "@/utils/fetchHelper";
 import { Icon } from "@iconify/react";
+import { ConnectWallet } from "@thirdweb-dev/react";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
@@ -214,6 +215,7 @@ export default function Learn() {
               <Icon icon="ion:accessibility" />
             </button>
           )}
+          <ConnectWallet />
           {isLoading && <Spinner />}
         </div>
       </div>

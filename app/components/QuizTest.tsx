@@ -2,6 +2,7 @@ import { quiz as ethereumQuiz } from "@/quiz/ethereum";
 import { quiz as layer2Quiz } from "@/quiz/layer2";
 import { quiz as zkevmQuiz } from "@/quiz/zkevm";
 import Quiz from "react-quiz-component";
+import Mint from "./Mint";
 
 export type topicProps = "Ethereum" | "zkEVM" | "Layer2";
 
@@ -21,16 +22,20 @@ const renderCustomResultPage = (obj: {
   const { reset, numberOfQuestions, numberOfCorrectAnswers } = obj;
   const finalScore = (numberOfCorrectAnswers / numberOfQuestions) * 100;
   return (
-    <div>
-      You got {numberOfCorrectAnswers} out of {numberOfQuestions} questions!
-      <br />
-      You scored {finalScore.toFixed(0)} points!
-      <br />
-      {finalScore >= 90 && `You won a NFT prize!`}
-      <br />
-      <button className="btn btn-block" onClick={reset}>
-        Try again
-      </button>
+    <div className="text-center">
+      <h2 className="font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        {finalScore.toFixed(0)}
+      </h2>
+      <p>
+        You got {numberOfCorrectAnswers} out of {numberOfQuestions} questions!
+      </p>
+      {finalScore >= 90 ? (
+        <Mint />
+      ) : (
+        <button className="btn btn-block" onClick={reset}>
+          Try again
+        </button>
+      )}
     </div>
   );
 };
