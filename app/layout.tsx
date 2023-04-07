@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Mentor Machines",
-  description: "Learn Blockchain with a AI mentor.",
+  description: "Learn Blockchain with AI mentors.",
   viewport: {
     width: "device-width",
     initialScale: 1,
