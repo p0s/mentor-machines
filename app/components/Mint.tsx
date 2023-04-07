@@ -7,7 +7,7 @@ import {
   useContract,
   useOwnedNFTs,
 } from "@thirdweb-dev/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Mint() {
   const [mintStatus, setMintStatus] = useState<boolean>(false);
@@ -21,6 +21,14 @@ export default function Mint() {
 
   const { data: ownedNFTs, isLoading } = useOwnedNFTs(nftCollection, address);
 
+  useEffect(() => {
+    if (ownedNFTs) {
+      if (ownedNFTs.length > 0) {
+        setMintStatus(true);
+      }
+    }
+  }, [ownedNFTs]);
+
   return (
     <div>
       <h1>You won an NFT prize!</h1>
@@ -29,7 +37,7 @@ export default function Mint() {
           <div>
             {ownedNFTs?.map((nft) => (
               <div key={nft.metadata.id.toString()}>
-                <div className="card w-full h-48 bg-neutral text-neutral-content">
+                <div className="card w-full h-64 bg-neutral text-neutral-content">
                   <figure>
                     <ThirdwebNftMedia metadata={nft.metadata} />
                   </figure>
@@ -55,7 +63,6 @@ export default function Mint() {
             metadata[Math.round(Math.random() * (metadata.length - 1))]
           );
         }}
-        onSuccess={(result) => setMintStatus(true)}
         theme="dark"
       >
         {mintStatus ? `Minted!` : `Claim your NFT!`}
