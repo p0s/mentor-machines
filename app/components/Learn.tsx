@@ -79,30 +79,16 @@ export default function Learn({ mentor }: { mentor: any }) {
   //   setIsLoading(false);
   // }
 
-  // async function getVideo(line: string, callback?: any) {
-  //   setIsLoading(true);
-  //   const res = await postDataGetJSON("/api/video", {
-  //     question: line,
-  //     idle_url: mentor.loopUrl,
-  //     azure_voice: mentor.azure_voice,
-  //   }); // Needless since already awaited above
-
-  //   console.log(res);
-  // }
-
   async function getVideo(line: string, callback?: any) {
     setIsLoading(true);
-    const res = await postData("/api/face", {
+    const res = await postDataGetJSON("/api/video", {
       question: line,
       idle_url: mentor.loopUrl,
       azure_voice: mentor.azure_voice,
     }); // Needless since already awaited above
-
-    if (res.body instanceof ReadableStream) {
-      let responseStream = new Response(res.body);
-      let blob = await responseStream.blob();
-      let url = URL.createObjectURL(blob);
-      setVideoUrl(url);
+    // console.log(res);
+    if (res) {
+      setVideoUrl(res.publicUrl);
       setTimeout(() => {
         setPlaying(true);
       }, 0);
@@ -111,12 +97,36 @@ export default function Learn({ mentor }: { mentor: any }) {
       } else {
         setIsLoading(false);
       }
-    } else {
-      // Suggest showing a friendly error to the user. This would "quietly" fail.
-      console.log("video service error.");
-      setIsLoading(false);
     }
   }
+
+  // async function getVideo(line: string, callback?: any) {
+  //   setIsLoading(true);
+  //   const res = await postData("/api/face", {
+  //     question: line,
+  //     idle_url: mentor.loopUrl,
+  //     azure_voice: mentor.azure_voice,
+  //   }); // Needless since already awaited above
+
+  //   if (res.body instanceof ReadableStream) {
+  //     let responseStream = new Response(res.body);
+  //     let blob = await responseStream.blob();
+  //     let url = URL.createObjectURL(blob);
+  //     setVideoUrl(url);
+  //     setTimeout(() => {
+  //       setPlaying(true);
+  //     }, 0);
+  //     if (callback) {
+  //       callback();
+  //     } else {
+  //       setIsLoading(false);
+  //     }
+  //   } else {
+  //     // Suggest showing a friendly error to the user. This would "quietly" fail.
+  //     console.log("video service error.");
+  //     setIsLoading(false);
+  //   }
+  // }
 
   const handleSelect = (e: { target: { value: string } }) => {
     setTopic(e.target.value as topicProps);

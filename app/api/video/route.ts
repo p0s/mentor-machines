@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import fetch from "node-fetch";
+import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(request: Request) {
   const { question, idle_url, azure_voice } = await request.json();
@@ -28,19 +29,33 @@ export async function POST(request: Request) {
 
     // Create a single supabase client for interacting with your database
     const supabase = createClient(
-      "https://fedufbbtgreynnntoyrl.supabase.co",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZHVmYmJ0Z3JleW5ubnRveXJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk1ODY4NTUsImV4cCI6MTk5NTE2Mjg1NX0.lnTefJFN6UYzbkx40Vzm_8Bnbhp9Sr2LDX-Uk2yzg_s"
+      "https://vduqyasswizvyfkfagto.supabase.co",
+      process.env.SUPABASE_KEY as string
     );
 
     let responseStream = new Response(response.body as any);
     let blob = await responseStream.blob();
 
-    const { data, error } = await supabase.storage
+    const fileName = `public/${uuidv4()}.mp4`
+
+    await supabase.storage
       .from("videos")
-      .upload("public/test.mp4", blob, {
+      .upload(fileName, blob, {
         cacheControl: "3600",
         upsert: false,
       });
+
+    // await supabase
+    //   .storage
+    //   .from('videos')
+    //   .createSignedUrl('public/alice.mp4', 60)
+
+
+    const { data } = supabase
+      .storage
+      .from('videos')
+      .getPublicUrl(fileName)
+
 
     // console.log("response", response);
     return NextResponse.json(data);
