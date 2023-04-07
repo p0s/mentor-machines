@@ -13,3 +13,7 @@ body {
   margin: 0 0 4rem 0 !important;
   width: 100% !important;
 }
+
+.answerBtn {
+  height: fit-content;
+}

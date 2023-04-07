@@ -48,7 +48,7 @@ export default function Mint() {
         {/* Here's where we put the next section (the mint button) */}
       </div>
       <Web3Button
-        isDisabled={mintStatus || ownedNFTs!.length > 0}
+        isDisabled={mintStatus}
         contractAddress={CONTRACT_ADDRESS}
         action={(contract) => {
           contract.erc721.mint(
@@ -58,7 +58,7 @@ export default function Mint() {
         onSuccess={(result) => setMintStatus(true)}
         theme="dark"
       >
-        {mintStatus || ownedNFTs!.length > 0 ? `Minted!` : `Claim your NFT!`}
+        {mintStatus ? `Minted!` : `Claim your NFT!`}
       </Web3Button>
     </div>
   );
