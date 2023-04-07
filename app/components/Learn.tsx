@@ -32,15 +32,52 @@ export default function Learn({ mentor }: { mentor: any }) {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  async function getLearningMaterials() {
-    const res = await postDataGetJSON("/api/topic", {
-      topic,
-      question,
+  const getLearningMaterials = async () => {
+    setMaterial("");
+
+    const response = await fetch("/api/live", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        topic,
+        question,
+      }),
     });
-    // console.log(res);
-    setMaterial(res.text);
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+
+    // This data is a ReadableStream
+    const data = response.body;
+    if (!data) {
+      return;
+    }
+
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      setMaterial((prev) => prev + chunkValue);
+    }
     setIsLoading(false);
-  }
+  };
+
+  // async function getLearningMaterials() {
+  //   const res = await postDataGetJSON("/api/topic", {
+  //     topic,
+  //     question,
+  //   });
+  //   // console.log(res);
+  //   setMaterial(res.text);
+  //   setIsLoading(false);
+  // }
 
   async function getVideo(line: string, callback?: any) {
     setIsLoading(true);
