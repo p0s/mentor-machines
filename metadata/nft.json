@@ -1,16 +1,359 @@
-{
-  "name": "MachineMasters",
-  "description": "Mastered the Machine Mentors",
-  "image": "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg",
-  "attributes": [
-    {
-      "trait_type": "Status",
-      "value": "Winner"
-    },
-    {
-      "display_type": "number",
-      "trait_type": "Score",
-      "value": 100
-    }
-  ]
-}
+[
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/0.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/1.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/2.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/3.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/4.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/5.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/6.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/7.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/8.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/9.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/10.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/11.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/12.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/13.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/14.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/15.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/16.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/17.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/18.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/19.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "name": "MachineMasters",
+    "description": "Mastered the Machine Mentors",
+    "image": "https://machinemasters.xyz/images/20.png",
+    "source": "Midjourney",
+    "attributes": [
+      {
+        "trait_type": "Status",
+        "value": "Winner"
+      },
+      {
+        "display_type": "number",
+        "trait_type": "Score",
+        "value": 100
+      }
+    ]
+  }
+]

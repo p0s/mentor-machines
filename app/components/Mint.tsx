@@ -51,7 +51,9 @@ export default function Mint() {
         isDisabled={mintStatus || ownedNFTs!.length > 0}
         contractAddress={CONTRACT_ADDRESS}
         action={(contract) => {
-          contract.erc721.mint(metadata);
+          contract.erc721.mint(
+            metadata[Math.round(Math.random() * (metadata.length - 1))]
+          );
         }}
         onSuccess={(result) => setMintStatus(true)}
         theme="dark"
