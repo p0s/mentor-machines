@@ -26,7 +26,7 @@ export default async function createChatCompletion(
 
   const completion = await response.json();
 
-  console.log(completion);
+  // console.log(completion);
 
   if (Object.prototype.hasOwnProperty.call(completion, "choices")) {
     return { text: completion.choices[0].message.content };
