@@ -29,13 +29,10 @@ const renderCustomResultPage = (obj: {
       <p>
         You got {numberOfCorrectAnswers} out of {numberOfQuestions} questions!
       </p>
-      {finalScore >= 90 ? (
-        <Mint />
-      ) : (
-        <button className="btn btn-block" onClick={reset}>
-          Try again
-        </button>
-      )}
+      {finalScore >= 90 && <Mint />}
+      <button className="btn btn-block" onClick={reset}>
+        {finalScore >= 90 ? `Learn More` : `Try again`}
+      </button>
     </div>
   );
 };

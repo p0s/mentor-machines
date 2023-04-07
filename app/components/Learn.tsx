@@ -1,5 +1,7 @@
 "use client";
+import { encourageLines, inCorretLines } from "@/config/lines";
 import { postData, postDataGetJSON } from "@/utils/fetchHelper";
+import { getRandomLine } from "@/utils/getLines";
 import { Icon } from "@iconify/react";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import dynamic from "next/dynamic";
@@ -94,9 +96,7 @@ export default function Learn({ mentor }: { mentor: any }) {
   const encourage = (response: any) => {
     const { isCorrect } = response;
     getVideo(
-      isCorrect
-        ? `Good job! You're doing great. Keep it up!`
-        : `Dont give up! You can do it!`
+      isCorrect ? getRandomLine(encourageLines) : getRandomLine(inCorretLines)
     );
   };
 
