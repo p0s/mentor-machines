@@ -9,7 +9,7 @@ export default function Mentors({
 }) {
   return (
     <div className="artboard phone-1">
-      <h1 className="text-center font-bold text-lg">Mentor Machines</h1>
+      <h1 className="text-center font-bold text-4xl">Mentor Machines</h1>
       {mentors.map((mentor, index) => {
         return (
           <Fragment key={mentor.name}>
