@@ -14,9 +14,7 @@ export default function HeadVideo() {
   const [question, setQuestion] = useState<string>(
     "I want to learn about zkEVM."
   );
-  const [videoUrl, setVideoUrl] = useState<string>(
-    "https://ugc-idle.s3-us-west-2.amazonaws.com/415417c29c16d10016b9042a44cd3e09.mp4"
-  );
+  const [videoUrl, setVideoUrl] = useState<string>("/videos/vitalik.mp4");
   const [playing, setPlaying] = useState<boolean>(false);
 
   const [material, setMaterial] = useState<string>("");
