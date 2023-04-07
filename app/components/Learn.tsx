@@ -139,7 +139,7 @@ export default function Learn({ mentor }: { mentor: any }) {
 
   const congradulations = () => {
     getVideo(
-      `Congratulations! You've finished the quiz. You can learn more about ${topic} by clicking the links below.`
+      `Great job! You've finished the quiz. You can learn more about ${topic} by clicking the links below.`
     );
   };
 
