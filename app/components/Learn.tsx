@@ -86,7 +86,7 @@ export default function Learn({ mentor }: { mentor: any }) {
       idle_url: mentor.loopUrl,
       azure_voice: mentor.azure_voice,
     }); // Needless since already awaited above
-    // console.log(res);
+
     if (res) {
       setVideoUrl(res.publicUrl);
       setTimeout(() => {
