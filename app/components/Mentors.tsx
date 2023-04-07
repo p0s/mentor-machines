@@ -1,5 +1,6 @@
-import styles from "./App.module.scss";
-import { ReactPlayer } from "./Learn";
+import { mentors } from "@/config/mentors";
+import { Fragment } from "react";
+import VideoHead from "./VideoHead";
 
 export default function Mentors({
   handleSelect,
@@ -9,57 +10,27 @@ export default function Mentors({
   return (
     <div className="artboard phone-1">
       <h1 className="text-center font-bold text-lg">Mentor Machines</h1>
-      <div className={styles["head-video"]}>
-        <ReactPlayer
-          className={styles["react-player"]}
-          playing
-          muted
-          loop
-          playsinline
-          url={"/videos/vitalik.mp4"}
-          width="100%"
-          height="100%"
-        />
-      </div>
-      <button
-        className="btn btn-block btn-sm btn-info"
-        onClick={() => handleSelect(0)}
-      >
-        block
-      </button>
-      <div className={styles["head-video"]}>
-        <ReactPlayer
-          className={styles["react-player"]}
-          playing
-          muted
-          loop
-          playsinline
-          url={"/videos/vitalik.mp4"}
-          width="100%"
-          height="100%"
-        />
-      </div>
-      <button
-        className="btn btn-block btn-sm btn-success"
-        onClick={() => handleSelect(1)}
-      >
-        block
-      </button>
-      <div className={styles["head-video"]}>
-        <ReactPlayer
-          className={styles["react-player"]}
-          playing
-          muted
-          loop
-          playsinline
-          url={"/videos/vitalik.mp4"}
-          width="100%"
-          height="100%"
-        />
-      </div>
-      <button className="btn btn-block btn-sm" onClick={() => handleSelect(2)}>
-        block
-      </button>
+      {mentors.map((mentor, index) => {
+        return (
+          <Fragment key={mentor.name}>
+            <VideoHead loopUrl={mentor.loopUrl} />
+            <button
+              className={
+                mentor.button_color === "info"
+                  ? `btn btn-block btn-sm btn-info`
+                  : mentor.button_color === "success"
+                  ? `btn btn-block btn-sm btn-success`
+                  : mentor.button_color === "warning"
+                  ? `btn btn-block btn-sm btn-warning`
+                  : `btn btn-block btn-sm`
+              }
+              onClick={() => handleSelect(index)}
+            >
+              {mentor.name}
+            </button>
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

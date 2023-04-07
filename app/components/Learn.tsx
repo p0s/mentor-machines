@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import styles from "./App.module.scss";
 import QuizTest, { topicProps } from "./QuizTest";
 import Spinner from "./Spinner";
+import VideoHead from "./VideoHead";
 
 export const ReactPlayer = dynamic(() => import("react-player/lazy"), {
   ssr: false,
@@ -116,31 +117,12 @@ export default function Learn() {
   return (
     <div className="artboard phone-1">
       <div className={styles["container"]}>
-        <div className={styles["head-video"]}>
-          {playing && (
-            <ReactPlayer
-              className={`${styles["react-player"]} ${styles["front"]}`}
-              playing={playing}
-              onEnded={() => {
-                setPlaying(false);
-              }}
-              playsinline
-              url={videoUrl}
-              width="100%"
-              height="100%"
-            />
-          )}
-          <ReactPlayer
-            className={styles["react-player"]}
-            playing
-            muted
-            loop
-            playsinline
-            url={"/videos/vitalik.mp4"}
-            width="100%"
-            height="100%"
-          />
-        </div>
+        <VideoHead
+          playing={playing}
+          setPlaying={setPlaying}
+          videoUrl={videoUrl}
+          loopUrl="/videos/vitalik.mp4"
+        />
         {!quiz && (
           <>
             <div>
