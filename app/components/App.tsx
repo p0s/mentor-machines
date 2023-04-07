@@ -6,6 +6,7 @@ import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import styles from "./App.module.scss";
 import QuizTest, { topicProps } from "./QuizTest";
+import Spinner from "./Spinner";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
@@ -23,16 +24,20 @@ export default function App() {
 
   const [accessibility, setAccessibility] = useState<boolean>(false);
 
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   async function getLearningMaterials() {
     const res = await postDataGetJSON("/api/topic", {
-      topic: "zkEVM",
+      topic,
       question,
     });
     // console.log(res);
     setMaterial(res.text);
+    setIsLoading(false);
   }
 
   async function getVideo(line: string, callback?: any) {
+    setIsLoading(true);
     const res = await postData("/api/face", {
       question: line,
     }); // Needless since already awaited above
@@ -47,10 +52,13 @@ export default function App() {
       }, 0);
       if (callback) {
         callback();
+      } else {
+        setIsLoading(false);
       }
     } else {
       // Suggest showing a friendly error to the user. This would "quietly" fail.
-      console.log("video url unknown");
+      console.log("video service error.");
+      setIsLoading(false);
     }
   }
 
@@ -70,7 +78,10 @@ export default function App() {
   const handleStartQuiz = () => {
     getVideo(
       `Okay, Let's do a little quiz about ${topic}. Try your best!`,
-      () => setQuiz(true)
+      () => {
+        setQuiz(true);
+        setIsLoading(false);
+      }
     );
   };
 
@@ -134,7 +145,7 @@ export default function App() {
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">
-                    Pick a topice to learn about.
+                    Pick a topic to learn about.
                   </span>
                 </label>
                 <select
@@ -182,7 +193,9 @@ export default function App() {
         )}
         {!quiz && (
           <div>
-            <ReactMarkdown>{material}</ReactMarkdown>
+            <ReactMarkdown className="h-48 overflow-auto">
+              {material}
+            </ReactMarkdown>
           </div>
         )}
         {material && (
@@ -201,7 +214,7 @@ export default function App() {
             )}
           </div>
         )}
-        <div>
+        <div className="flex justify-between items-center">
           {accessibility ? (
             <button
               onClick={() => setAccessibility(false)}
@@ -217,6 +230,7 @@ export default function App() {
               <Icon icon="ion:accessibility" />
             </button>
           )}
+          {isLoading && <Spinner />}
         </div>
       </div>
     </div>

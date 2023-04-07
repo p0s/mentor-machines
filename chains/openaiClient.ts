@@ -2,7 +2,7 @@ export default async function createChatCompletion(
   topic: string,
   question: string
 ) {
-  const direction = `You are a knowledgeable teacher providing students with learning materials on the topic of ${topic}. The length of the learning materials should be limited to 100 words, and should be as concise and comprehensive as possible.`;
+  const direction = `You are a knowledgeable teacher providing students with learning materials on the topic of ${topic} and user question.If user question is not related to the topic just ignore the question and provide basic knowledge of the topic. The length of the learning materials should be limited to 100 words, and should be as concise and comprehensive as possible. User question:`;
 
   const prompt = [
     { role: "system", content: direction },
