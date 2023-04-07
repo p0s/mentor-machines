@@ -1,5 +1,5 @@
 export async function POST(request: Request) {
-  const { question } = await request.json();
+  const { question, idle_url, azure_voice } = await request.json();
 
   try {
     //Ask a question
@@ -13,10 +13,9 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           bot_name: "Santa",
-          idle_url:
-            "https://ugc-idle.s3-us-west-2.amazonaws.com/415417c29c16d10016b9042a44cd3e09.mp4",
+          idle_url: idle_url,
           bot_response: question,
-          azure_voice: "en-US-ChristopherNeural",
+          azure_voice: azure_voice,
           azure_style: "friendly",
           animation_pipeline: "high_speed",
         }),

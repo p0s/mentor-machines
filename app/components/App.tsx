@@ -1,4 +1,5 @@
 "use client";
+import { mentors } from "@/config/mentors";
 import { ScrollAlphaTestnet } from "@thirdweb-dev/chains";
 import { ThirdwebProvider, metamaskWallet } from "@thirdweb-dev/react";
 import { useState } from "react";
@@ -17,7 +18,7 @@ export default function App() {
     >
       <>
         {selected !== null ? (
-          <Learn />
+          <Learn mentor={mentors[selected]} />
         ) : (
           <Mentors handleSelect={handleSelect} />
         )}

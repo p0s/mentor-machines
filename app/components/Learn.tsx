@@ -14,12 +14,12 @@ export const ReactPlayer = dynamic(() => import("react-player/lazy"), {
   ssr: false,
 });
 
-export default function Learn() {
+export default function Learn({ mentor }: { mentor: any }) {
   const [topic, setTopic] = useState<topicProps>("zkEVM");
   const [question, setQuestion] = useState<string>(
     "I want to learn about zkEVM."
   );
-  const [videoUrl, setVideoUrl] = useState<string>("/videos/vitalik.mp4");
+  const [videoUrl, setVideoUrl] = useState<string>(mentor.loopUrl);
   const [playing, setPlaying] = useState<boolean>(false);
 
   const [material, setMaterial] = useState<string>("");
@@ -44,6 +44,8 @@ export default function Learn() {
     setIsLoading(true);
     const res = await postData("/api/face", {
       question: line,
+      idle_url: mentor.loopUrl,
+      azure_voice: mentor.azure_voice,
     }); // Needless since already awaited above
 
     if (res.body instanceof ReadableStream) {
@@ -122,7 +124,7 @@ export default function Learn() {
           playing={playing}
           setPlaying={setPlaying}
           videoUrl={videoUrl}
-          loopUrl="/videos/vitalik.mp4"
+          loopUrl={mentor.loopUrl}
         />
         {!quiz && (
           <>
