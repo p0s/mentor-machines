@@ -19,7 +19,7 @@ export const mentors = [
     name: "HaichenShen",
     loopUrl:
       "https://ugc-idle.s3-us-west-2.amazonaws.com/0b17c902a25b6965e16d2216cbddedea.mp4",
-    azure_voice: "en-US-WayneNeural",
+    azure_voice: "en-SG-WayneNeural",
     azure_style: "friendly",
     button_color: "warning",
   },
