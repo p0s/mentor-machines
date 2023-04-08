@@ -1,3 +1,4 @@
+import { checkUrlReturnsJson, getDataJSON } from "@/utils/fetchHelper";
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import fetch from "node-fetch";
@@ -8,19 +9,25 @@ export async function POST(request: Request) {
 
   try {
     const fileName =
-      `${question}-${azure_voice}`.trim().replace(/[^\w\s]|_/g, "") + ".mp4";
+      `${question}-${azure_voice}`
+        .trim()
+        .replace(/[^\w\s]|_/g, "")
+        .replace(/\s/g, "") + ".mp4";
     // Create a single supabase client for interacting with your database
     const supabase = createClient(
       "https://vduqyasswizvyfkfagto.supabase.co",
       process.env.SUPABASE_KEY as string
     );
+    // console.log(fileName);
     //Check if video already exists
     // publicUrl
     const { data: findVideoData } = supabase.storage
       .from("videos")
       .getPublicUrl(fileName);
 
-    if (findVideoData && "publicUrl" in findVideoData) {
+    const isJSON = await checkUrlReturnsJson(findVideoData.publicUrl);
+
+    if (!isJSON) {
       return NextResponse.json(findVideoData);
     } else {
       const response = await fetch(
