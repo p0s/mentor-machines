@@ -10,26 +10,11 @@ Mentor Machines was created in three days at ETH Beijing hackathon in April 2023
 
 ![app-mockup-mm2](https://user-images.githubusercontent.com/85865001/230700835-24b70550-248f-4904-b154-a12a0b966ac4.png)
 
-### Introducing our AI Mentors
+### Let our mentors introduce themselves :)
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        Vitalik<br>
-        <img src="https://user-images.githubusercontent.com/23061820/230701145-ad497175-4f4d-42ef-afba-fb6e85c211c4.gif" alt="Vitalik" width="150" />
-      </td>
-      <td align="center">
-        Shafi<br>
-        <img src="https://user-images.githubusercontent.com/23061820/230701147-9d70fd10-15b2-4e1d-97eb-8671c156e625.gif" alt="Shafi" width="150" />
-      </td>
-      <td align="center">
-        Haichen<br>
-        <img src="https://user-images.githubusercontent.com/23061820/230701148-b07e6643-7bff-4750-b672-2c7ce5539b3e.gif" alt="Haichen" width="150" />
-      </td>
-    </tr>
-  </table>
-</div>
+Vitalik Buterin | Shafi Goldwasser | Haichen Shen
+:-: | :-: | :-:
+<video width="250" src="https://user-images.githubusercontent.com/85865001/230701687-5a27ed2d-27c2-4e15-938a-1d8553d5dc78.mp4"/></video> | <video width="250" src="https://user-images.githubusercontent.com/85865001/230701691-c68c825d-cf4f-4244-8c7a-5aff52c3738b.mp4"/></video> | <video width="250" src="https://user-images.githubusercontent.com/85865001/230701694-4c8e0c91-950b-4492-aa39-23edd4fe626f.mp4"/></video>
 
 PS. Thank you Vitalik, Shafi and Haichen for being our AI tutors. And apologies that we proceeded without asking your consent ❤️ Let us know if you’d like to be removed.
 
