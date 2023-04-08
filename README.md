@@ -34,6 +34,13 @@ Learning before Mentor Machine | Learning with Mentor Machine
 :-: | :-:
 <img width="300" src="https://user-images.githubusercontent.com/85865001/230702631-ef73c973-b41a-4bfc-8e66-51b750d0c3e7.jpg"> | <img width="300" src="https://user-images.githubusercontent.com/85865001/230702639-5643a669-8be7-4958-a205-4d25e58e4449.jpg">
 
+### Features
+
+- AI generated learning content (ChatGPT)
+- Interactive quiz to test your knowledge
+- Live AI Mentor for video feedback and encouragement (Ex-human)
+- Mint NFT prize for completing the quiz with full points (Scroll testnet)
+- Accessibility features for (built-in audio screen reader)
 
 ### Getting started
 
