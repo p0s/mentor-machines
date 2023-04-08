@@ -17,10 +17,10 @@ export const quiz = {
       point: "20",
     },
     {
-      question: "Which of the following is a popular Layer 2 scaling solution for Ethereum?",
+      question: "Which of the following is the main Layer 2 scaling solution on Ethereum's current roadmap?",
       questionType: "text",
       answerSelectionType: "single",
-      answers: ["Optimistic Rollups", "Sharding"],
+      answers: ["Rollups", "Sharding"],
       correctAnswer: "1",
       messageForCorrectAnswer: "Correct answer. Good job.",
       messageForIncorrectAnswer: "Incorrect answer. Please try again.",
@@ -34,7 +34,7 @@ export const quiz = {
       answerSelectionType: "single",
       answers: [
         "Reduced transaction fees",
-        "Increased privacy",
+        "Increased privacy by default",
         "Both of the above",
       ],
       correctAnswer: "1",
