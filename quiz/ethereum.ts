@@ -134,7 +134,7 @@ export const quiz = {
       questionType: "text",
       answerSelectionType: "single",
       answers: [
-      "Aave",
+      "CowSwap",
       "Uniswap",
       "Compound"
       ],
