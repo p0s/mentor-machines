@@ -17,6 +17,18 @@ export async function postData(url = "", data = {}) {
   return response; // parses JSON response into native JavaScript objects
 }
 
+export async function getDataJSON(url = "", data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: "GET", // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
+
 export async function postDataGetJSON(url = "", data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -28,4 +40,10 @@ export async function postDataGetJSON(url = "", data = {}) {
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
   return response.json(); // parses JSON response into native JavaScript objects
+}
+
+export async function checkUrlReturnsJson(url = "") {
+  const response = await fetch(url);
+  const contentType = response.headers.get("Content-Type");
+  return contentType && contentType.includes("application/json");
 }
