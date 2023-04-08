@@ -77,9 +77,9 @@ export const quiz = {
       questionType: "text",
       answerSelectionType: "single",
       answers: [
-        "A type of Layer 1 scaling solution for the Ethereum blockchain",
+        "A type of Layer 5 scaling solution for the Ethereum blockchain",
         "A type of Layer 2 scaling solution for the Ethereum blockchain",
-        "A smart contract that executes on the Ethereum main chain",
+        "Only a smart contract that executes on the Ethereum main chain",
       ],
       correctAnswer: "2",
       messageForCorrectAnswer: "Correct answer. Good job.",
@@ -96,7 +96,7 @@ export const quiz = {
       answers: [
         "To create the cryptographic proof that is submitted to the Ethereum main chain",
         "To execute the transactions in the zk-Rollup contract",
-        "To generate the public parameters for the zk-Rollup contract",
+        "To generate the NFTs for the zk-Rollup contract",
       ],
       correctAnswer: "1",
       messageForCorrectAnswer: "Correct answer. Good job.",
@@ -113,7 +113,7 @@ export const quiz = {
       answers: [
         "A cryptographic proof system that enables the verification of a statement without revealing any of the underlying data or information",
         "A Layer 2 scaling solution for the Ethereum blockchain",
-        "A smart contract that executes on the Ethereum main chain",
+        "Only a smart contract that executes on the Ethereum main chain",
       ],
       correctAnswer: "1",
       messageForCorrectAnswer: "Correct answer. Good job.",
@@ -147,7 +147,7 @@ export const quiz = {
       answerSelectionType: "single",
       answers: [
         "A transparent transaction can be seen by anyone, while a confidential transaction can only be seen by the parties involved",
-        "A transparent transaction is executed on the Ethereum main chain, while a confidential transaction is executed off-chain",
+        "A transparent transaction is private on the Ethereum main chain and public on Layer 2",
         "There is no difference between a transparent and a confidential transaction",
       ],
       correctAnswer: "1",
@@ -199,7 +199,7 @@ export const quiz = {
         "What is the main benefit of zk-rollups compared to other layer 2 scaling solutions?",
       questionType: "text",
       answerSelectionType: "single",
-      answers: ["Higher throughput", "Lower gas fees", "Better security"],
+      answers: ["Lower throughput", "Higher gas fees", "Better security"],
       correctAnswer: "3",
       messageForCorrectAnswer:
         "Correct! zk-rollups provide better security than other layer 2 scaling solutions.",
@@ -217,8 +217,8 @@ export const quiz = {
       answerSelectionType: "single",
       answers: [
         "zk-rollups use zero knowledge proofs while optimistic rollups use fraud proofs",
-        "zk-rollups are faster than optimistic rollups",
-        "zk-rollups are more expensive than optimistic rollups",
+        "zk-rollups are by default much faster than optimistic rollups",
+        "zk-rollups are always more expensive than optimistic rollups",
       ],
       correctAnswer: "1",
       messageForCorrectAnswer:
@@ -282,25 +282,6 @@ export const quiz = {
       messageForIncorrectAnswer: "Incorrect. Please try again.",
       explanation:
         "A recursive SNARK is a SNARK that can prove the validity of another SNARK. This allows for a proof of a proof, which can be useful in certain applications.",
-      point: "30",
-    },
-
-    {
-      question: "What is the main advantage of using zk-rollups?",
-      questionType: "text",
-      answerSelectionType: "single",
-      answers: [
-        "Increased security",
-        "Increased throughput",
-        "Reduced gas fees",
-      ],
-      correctAnswer: "2",
-      messageForCorrectAnswer:
-        "Correct! The main advantage of using zk-rollups is increased throughput.",
-      messageForIncorrectAnswer:
-        "Incorrect. The correct answer is B. The main advantage of using zk-rollups is increased throughput.",
-      explanation:
-        "By bundling multiple transactions into a single transaction, zk-rollups can greatly increase the throughput of the Ethereum network, allowing for more transactions to be processed per second.",
       point: "30",
     },
 
