@@ -8,7 +8,7 @@ export const mentors = [
     button_color: "info",
   },
   {
-    name: "ShafiGoldwasser",
+    name: "Shafi Goldwasser",
     loopUrl:
       "https://ugc-idle.s3-us-west-2.amazonaws.com/2bdceae89fae33c94366a38ed0e43f79.mp4",
     azure_voice: "en-US-CoraNeural",
@@ -16,7 +16,7 @@ export const mentors = [
     button_color: "success",
   },
   {
-    name: "HaichenShen",
+    name: "Haichen Shen",
     loopUrl:
       "https://ugc-idle.s3-us-west-2.amazonaws.com/0b17c902a25b6965e16d2216cbddedea.mp4",
     azure_voice: "en-SG-WayneNeural",
