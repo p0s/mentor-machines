@@ -231,24 +231,6 @@ export const quiz = {
     },
 
     {
-      question: "What is the purpose of the validity proof in zk-Rollups?",
-      questionType: "text",
-      answerSelectionType: "single",
-      answers: [
-        "To ensure that the computation is correct",
-        "To prove that a transaction is valid",
-        "To ensure that the state is updated correctly",
-      ],
-      correctAnswer: "2",
-      messageForCorrectAnswer:
-        "Correct! The validity proof is used to prove that a transaction is valid.",
-      messageForIncorrectAnswer: "Incorrect. Please try again.",
-      explanation:
-        "The validity proof is used to prove that a transaction is valid. This involves proving that the transaction conforms to the rules of the smart contract, and that the inputs and outputs are correctly balanced.",
-      point: "30",
-    },
-
-    {
       question: "What is a snark-friendly circuit?",
       questionType: "text",
       answerSelectionType: "single",
