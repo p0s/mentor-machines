@@ -21,13 +21,13 @@ export default function Mint() {
 
   const { data: ownedNFTs, isLoading } = useOwnedNFTs(nftCollection, address);
 
-  useEffect(() => {
-    if (ownedNFTs) {
-      if (ownedNFTs.length > 0) {
-        setMintStatus(true);
-      }
-    }
-  }, [ownedNFTs]);
+  // useEffect(() => {
+  //   if (ownedNFTs) {
+  //     if (ownedNFTs.length > 0) {
+  //       setMintStatus(true);
+  //     }
+  //   }
+  // }, [ownedNFTs]);
 
   return (
     <div>
