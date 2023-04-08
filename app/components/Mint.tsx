@@ -37,7 +37,7 @@ export default function Mint() {
           <div>
             {ownedNFTs?.map((nft) => (
               <div key={nft.metadata.id.toString()}>
-                <div className="card w-full h-64 bg-neutral text-neutral-content">
+                <div className="card w-full h-64 my-2 bg-neutral text-neutral-content">
                   <figure>
                     <ThirdwebNftMedia metadata={nft.metadata} />
                   </figure>
