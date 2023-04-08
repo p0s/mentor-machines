@@ -49,7 +49,7 @@ export const quiz = {
       questionType: "text",
       answerSelectionType: "multiple",
       answers: [
-        "Polygon (MATIC)",
+        "Scroll",
         "Optimism",
         "zkSync",
         "Lightning Network",
