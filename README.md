@@ -1,3 +1,4 @@
+
 ## Mentor Machines - introduction
 
 Mentor Machines is AI tutor that can teach you anything about blockchains, Ethereum or zkEVM.
@@ -26,6 +27,13 @@ Introducing Mentor Machines: “Personalized, unlimited learning opportunities�
 2) Choose the topic you’d like to learn
 3) Learning materials generated with AI
 4) Test your knowledge with quiz
+
+### Mentor Machines makes learning enjoyable
+
+Learning before Mentor Machine | Learning with Mentor Machine
+:-: | :-:
+<img width="300" src="https://user-images.githubusercontent.com/85865001/230702631-ef73c973-b41a-4bfc-8e66-51b750d0c3e7.jpg"> | <img width="300" src="https://user-images.githubusercontent.com/85865001/230702639-5643a669-8be7-4958-a205-4d25e58e4449.jpg">
+
 
 ### Getting started
 
