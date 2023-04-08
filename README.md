@@ -18,6 +18,15 @@ Haichen [to-be-added-gif]
 
 PS. Thank you Vitalik, Shafi and Haichen for being our AI tutors. And apologies that we proceeded without asking your consent ❤️ Let us know if you’d like to be removed.
 
+### Game play
+
+Introducing Mentor Machines: “Personalized, unlimited learning opportunities”
+
+1) Pick your favorite AI Mentor 
+2) Choose the topic you’d like to learn
+3) Learning materials generated with AI
+4) Test your knowledge with quiz
+
 ### Getting started
 
 To get started, you need to install the following:
@@ -26,3 +35,19 @@ To get started, you need to install the following:
 yarn
 yarn dev
 ```
+
+### Used libraries / APIs
+
+- Ex-human (video generated tutors)
+- ChatGPT
+- MidJourney
+
+### Limitations & Ideas for future
+
+- Mentor Machines was developed in three days - many things could be improved, such as:
+
+- The quiz questions have been generated using ChatGPT separately, and inserted as static file. These could be generated dynamically.
+
+- Learning topics are a fixed as dropdown. Instead of dropdown, this could be a text box where you could insert anything you’d like to learn.
+
+- More AI tutors faces! With Ex-Human.
