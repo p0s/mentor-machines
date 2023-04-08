@@ -42,12 +42,12 @@ yarn dev
 - ChatGPT
 - MidJourney
 
-### Limitations & Ideas for future
+### Future plan
 
-- Mentor Machines was developed in three days - many things could be improved, such as:
+- Mentor Machines was developed in three days - many things can be improved, such as:
 
-- The quiz questions have been generated using ChatGPT separately, and inserted as static file. These could be generated dynamically.
+- The quiz questions have been generated using ChatGPT and inserted as static file. These could be generated dynamically.
 
-- Learning topics are a fixed as dropdown. Instead of dropdown, this could be a text box where you could insert anything you’d like to learn.
+- Learning topics are a fixed as dropdown. Instead of dropdown, this could be a text box where you could write anything you’d like to learn.
 
-- More AI tutors faces! With Ex-Human.
+- More AI tutors faces! 
